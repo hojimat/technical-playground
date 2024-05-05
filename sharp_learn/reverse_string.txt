@@ -1,0 +1,22 @@
+using System;
+
+namespace MainProgram {
+    class Program {
+        internal static string Reversed(string x) {
+            int N = x.Length;
+            char[] xArray = new char[N];
+            for(int i=0; i<N; i++){
+                xArray[i] = x[N-1-i];
+            }
+            string xReverse = new string(xArray);
+            System.Console.WriteLine(xReverse);
+            return xReverse;
+        }
+
+        static void Main(string[] args) {
+            System.Console.WriteLine("Enter a sentence:");
+            string x = Console.ReadLine();
+            Reversed(x);
+        }
+    }
+}

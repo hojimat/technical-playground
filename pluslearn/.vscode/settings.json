@@ -1,0 +1,14 @@
+{
+    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
+    "cmake.sourceDirectory": "/home/ravshan/interview/pluslearn/headers",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "files.associations": {
+        "array": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "span": "cpp",
+        "new": "cpp"
+    }
+}

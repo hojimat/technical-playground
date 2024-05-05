@@ -1,0 +1,15 @@
+/home/ravshan/Desktop/sharp_learn/bin/Debug/net6.0/sharp_learn
+/home/ravshan/Desktop/sharp_learn/bin/Debug/net6.0/sharp_learn.deps.json
+/home/ravshan/Desktop/sharp_learn/bin/Debug/net6.0/sharp_learn.runtimeconfig.json
+/home/ravshan/Desktop/sharp_learn/bin/Debug/net6.0/sharp_learn.dll
+/home/ravshan/Desktop/sharp_learn/bin/Debug/net6.0/ref/sharp_learn.dll
+/home/ravshan/Desktop/sharp_learn/bin/Debug/net6.0/sharp_learn.pdb
+/home/ravshan/Desktop/sharp_learn/obj/Debug/net6.0/sharp_learn.csproj.AssemblyReference.cache
+/home/ravshan/Desktop/sharp_learn/obj/Debug/net6.0/sharp_learn.GeneratedMSBuildEditorConfig.editorconfig
+/home/ravshan/Desktop/sharp_learn/obj/Debug/net6.0/sharp_learn.AssemblyInfoInputs.cache
+/home/ravshan/Desktop/sharp_learn/obj/Debug/net6.0/sharp_learn.AssemblyInfo.cs
+/home/ravshan/Desktop/sharp_learn/obj/Debug/net6.0/sharp_learn.csproj.CoreCompileInputs.cache
+/home/ravshan/Desktop/sharp_learn/obj/Debug/net6.0/sharp_learn.dll
+/home/ravshan/Desktop/sharp_learn/obj/Debug/net6.0/ref/sharp_learn.dll
+/home/ravshan/Desktop/sharp_learn/obj/Debug/net6.0/sharp_learn.pdb
+/home/ravshan/Desktop/sharp_learn/obj/Debug/net6.0/sharp_learn.genruntimeconfig.cache

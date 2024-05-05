@@ -1,0 +1,17 @@
+<h1>Create a post</h1>
+
+<div class="form">
+<%= form_with(model: @post, url: "/posts") do |form| %>
+  <%= form.label :author %>
+  <%= form.text_field :author, required: true %>
+
+  <%= form.label :title %>
+  <%= form.text_field :title, required: true  %>
+
+  <%= form.label :body %>
+  <%= form.text_area :body, required: true  %>
+
+
+  <%= form.submit 'Create Post' %>
+<% end %>
+</div>

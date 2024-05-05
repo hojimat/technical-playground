@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "n/jdIj/HRD/quwUuz7kRgfNWk0fxoOpkx1EeU689Awcu7WjnVSVfKbMydedlIGpcqP/39PjfUsRBC0wg8W3Jnw==",
+  "success": true,
+  "projectFilePath": "/home/ravshan/Desktop/sharp_learn/sharp_learn.csproj",
+  "expectedPackageFiles": [
+    "/home/ravshan/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.10/microsoft.aspnetcore.app.ref.6.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,16 @@
+using System;
+
+namespace MainProgram {
+    class Program {
+        static void Main(string[] args) {
+            System.Console.WriteLine("Enter a number:");
+            string mynum = Console.ReadLine();
+            int N = mynum.Length;
+
+            for(int i=0; i<N; i++){
+                Console.Write(mynum[N-1-i]);
+            }
+
+        }
+    }
+}

@@ -1,0 +1,23 @@
+using System;
+
+namespace MainProgram {
+    class Program {
+        static void Main(string[] args) {
+            double cubic_sum = 0;
+            System.Console.WriteLine("Enter a candidate number:");
+            string candidate = Console.ReadLine();
+
+            foreach(char c in candidate){
+                int cx = (int)char.GetNumericValue(c);
+                cubic_sum += Math.Pow(cx, 3);
+            }
+
+            if(cubic_sum==Convert.ToInt32(candidate)){
+                System.Console.WriteLine($"The number {candidate} is an Armstrong number!");
+            }else{
+                System.Console.WriteLine($"The number {candidate} is not an Armstrong number");
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,3 @@
+/home/ravshan/interview/pluslearn/build/CMakeFiles/myprog.dir
+/home/ravshan/interview/pluslearn/build/CMakeFiles/edit_cache.dir
+/home/ravshan/interview/pluslearn/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uWPKYIHaU/n0YKg0e4LNl4I4hQ55fMKB2UeEV1WT8pk0qW9GFi44IWrpMPHVFG5W/0RBsRTdyFXOtodP+KWUbQ==",
+  "success": true,
+  "projectFilePath": "/home/ravshan/Desktop/dotnetlearn/dotnetlearn.csproj",
+  "expectedPackageFiles": [
+    "/home/ravshan/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.10/microsoft.aspnetcore.app.ref.6.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

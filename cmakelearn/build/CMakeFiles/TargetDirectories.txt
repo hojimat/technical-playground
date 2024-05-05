@@ -1,0 +1,3 @@
+/home/ravshan/Desktop/interview/cmakelearn/build/CMakeFiles/hello.dir
+/home/ravshan/Desktop/interview/cmakelearn/build/CMakeFiles/edit_cache.dir
+/home/ravshan/Desktop/interview/cmakelearn/build/CMakeFiles/rebuild_cache.dir

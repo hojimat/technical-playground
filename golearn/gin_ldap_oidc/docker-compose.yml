@@ -1,0 +1,34 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    depends_on:
+      - ldapserver
+  ldapserver:
+    image: bitnami/openldap:2.6
+    user: root
+    environment:
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=admin123
+      - LDAP_ROOT=dc=fdtech,dc=de
+      #- LDAP_ENABLE_TLS=yes
+      #- LDAP_REQUIRE_TLS=yes
+      #- LDAP_LDAPS_PORT_NUMBER=636
+      #- LDAP_TLS_CERT_FILE=/certs/ldapserver.crt
+      #- LDAP_TLS_KEY_FILE=/certs/ldapserver.key
+      #- LDAP_TLS_CA_FILE=/certs/ldapserver.crt
+    ports:
+      #- "636:636"
+      - "1389:1389"
+    volumes:
+      - ./ldap_server/data:/bitnami/openldap
+      #- ./ldapkeys:/certs
+
+volumes:
+  backend:
+    driver: local
+  ldapserver:
+    driver: local

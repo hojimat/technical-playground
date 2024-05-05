@@ -1,0 +1,17 @@
+<h1>Sign up here</h1>
+
+<div class="form">
+<%= form_with(model: @user, url: "/users") do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, required: true %>
+
+  <%= form.label :email %>
+  <%= form.text_field :email, required: true  %>
+
+  <%= form.submit 'Sign up' %>
+<% end %>
+</div>
+
+<div>
+  <a href="/">Click here</a> to go back to the homepage.
+</div>

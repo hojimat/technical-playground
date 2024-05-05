@@ -1,0 +1,19 @@
+<h1>History log</h1>
+<p>Here is the log of the post actions:</p>
+
+<table class="maintable">
+  <tr>
+    <th>Type</th>
+    <th>User</th>
+    <th>Created at</th>
+  </tr>
+<% @history.each do |entry| %>
+  <tr>
+    <td><%= entry.typeof %></td>
+    <td><%= @user.name %></td>
+    <td><%= entry.created_at %></td>
+  </tr>
+<% end %>
+</table>
+
+<p>To go back to the home page, please <a href="/">click here</a>.</p>

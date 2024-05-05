@@ -1,0 +1,28 @@
+<h1>Cheesy posts</h1>
+<p>Here is the list of all the cheesy posts:</p>
+
+<div>
+  <div class="alignright">
+    <a class="btn" href="/posts/new">+ Create post</a>
+  </div>
+</div>
+
+
+<table class="maintable">
+  <tr>
+    <th>Author</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Action</th>
+  </tr>
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.author %></td>
+    <td><%= post.title %></td>
+    <td><%= post.body %></td>
+    <td><button>Details</button></td>
+  </tr>
+<% end %>
+</table>
+
+<p>To go back to the home page, please <a href="/">click here</a>.</p>

@@ -1,0 +1,22 @@
+using System;
+
+namespace MainProgram {
+    class Program {
+        static void Main(string[] args) {
+            Console.WriteLine("Enter an integer:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            bool isPrime = true;
+            
+            if(a>2){
+                for(int i=2; i<a; i++) {
+                    if (a % i == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+
+            Console.WriteLine(isPrime);
+        }
+    }
+}

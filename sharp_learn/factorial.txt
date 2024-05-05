@@ -1,0 +1,19 @@
+using System;
+
+namespace MainProgram {
+    class Program {
+        static void Main(string[] args) {
+            for(int i=1; i<10; i++) {
+                System.Console.WriteLine(factorial(i)); 
+            }
+        }
+
+        public static long factorial(int n) {
+            if (n==1) {
+                return 1;
+            }
+
+            return factorial(n-1) * n;
+        }
+    }
+}

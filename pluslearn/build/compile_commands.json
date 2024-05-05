@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/ravshan/interview/pluslearn/build",
+  "command": "/usr/bin/g++ -I/home/ravshan/interview/pluslearn/headers -g -std=gnu++17 -o CMakeFiles/myprog.dir/headers/main.cpp.o -c /home/ravshan/interview/pluslearn/headers/main.cpp",
+  "file": "/home/ravshan/interview/pluslearn/headers/main.cpp",
+  "output": "CMakeFiles/myprog.dir/headers/main.cpp.o"
+},
+{
+  "directory": "/home/ravshan/interview/pluslearn/build",
+  "command": "/usr/bin/g++ -I/home/ravshan/interview/pluslearn/headers -g -std=gnu++17 -o CMakeFiles/myprog.dir/headers/Student.cpp.o -c /home/ravshan/interview/pluslearn/headers/Student.cpp",
+  "file": "/home/ravshan/interview/pluslearn/headers/Student.cpp",
+  "output": "CMakeFiles/myprog.dir/headers/Student.cpp.o"
+}
+]

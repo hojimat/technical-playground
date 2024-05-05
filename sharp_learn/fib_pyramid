@@ -1,0 +1,21 @@
+using System;
+
+namespace MainProgram {
+    class Program {
+        static void Main(string[] args) {
+            string currentLine = "";
+            for(int i=1; i<20; i++) {
+                currentLine = currentLine + " " + fib(i).ToString();
+                System.Console.Write($"{currentLine}\n");
+            }
+        }
+
+        public static int fib(int n){
+            if (n==1 | n==2){
+                return 1;
+            }
+
+            return fib(n-1) + fib(n-2);
+        }
+    }
+}
