@@ -9,78 +9,50 @@ class Solution {
 public:
     int carFleet(int target, std::vector<int>& position, std::vector<int>& speed) {
         int n = position.size();
-
-        std::map<int, int> speeds {};
-        for(int i=0; i<n; i++) {
-            speeds.insert({position[i], speed[i]});
+        // we don't need speed, we can compare position+time
+        // because we were guaranteed no duplicate positions;
+        // this is already O(n*log n) because of sorting
+        std::map<int, int> cars {}; 
+        for (int i=0; i<n; i++) {//O(n)
+            int toCeiling = (target-position[i]) % speed[i] != 0;
+            int timeToFinish = (target-position[i])/speed[i] + toCeiling;
+            //cars.insert({position[i], timeToFinish});
+            cars[position[i]] = timeToFinish;
         }
 
-
-        std::stack<std::pair<int,int>> fleets {};
-
-        for (auto it = speeds.rbegin(); it != speeds.rend(); ++it) {
-            if (fleets.empty()) {
-                fleets.push({it->first, it->second});
-                std::cout << "Fleet was empty. Pushing " << it->first << ":" << it->second << std::endl;
+        std::stack<std::pair<int, int>> uniqueFinishes {};
+        // Now we have a sorted map of cars {position: timeToFinish}
+        // we start from the closest car to the finish
+        // add it to stack; next add only if different finish time
+        for (auto it=cars.rbegin(); it != cars.rend(); ++it) {
+            if (uniqueFinishes.empty()) {
+                uniqueFinishes.push({it->first, it->second});
                 continue;
             }
 
-            bool inFleetWithTop = isFleet(target, it->first, it->second, fleets.top().first, fleets.top().second);
-            if(!inFleetWithTop) {
-                fleets.push({it->first, it->second});
-                std::cout << "Fleet top was" << fleets.top().first << ":" << fleets.top().second << ". Pushing " << it->first << ":" << it->second << std::endl;
+            int topPos = uniqueFinishes.top().first;
+            int topTtf = uniqueFinishes.top().second;
+            int curPos = it->first;
+            int curTtf = it->second;
+            // by design, we know that topPos > curPos
+            // so, only need to check ttf
+
+            if (curTtf > topTtf) {// doesn't catch up on time
+                uniqueFinishes.push({it->first, it->second });
                 continue;
-            }
-
-            std::cout << "Fleet top was" << fleets.top().first << ":" << fleets.top().second << 
-                         ". Same fleet as " << it->first << ":" << it->second << ". Continue" << std::endl;
-        }
-
-        // while(!fleets.empty()) {
-        //     std::cout << fleets.top().first << " " << fleets.top().second << "\n";
-        //     fleets.pop();
-        // }
-
-        return fleets.size();
-    }
-
-private:
-    bool isFleet(int target, int pos0, int spd0, int pos1, int spd1) {
-        int posL, posF, spdL, spdF;
-        if (pos0 > pos1) {
-            posL = pos0;
-            spdL = spd0;
-            posF = pos1;
-            spdF = spd1;
-        } else {
-            posL = pos1;
-            spdL = spd1;
-            posF = pos0;
-            spdF = spd0;
-        }
-
-        if (spdL >= spdF) {
-            return false;
-        } else {
-            int timeToCatch = std::ceil(  (float)((posL-posF)) /  (float)((spdF-spdL)) );
-            if (posL + timeToCatch*spdL > target) {
-                //std::cout << posL << "," << spdL << "; " << posF << "," << spdF << "; " << timeToCatch << "; " << target << "------";
-                return false;
-            } else {
-                std::cout << posL << "," << spdL << "; " << posF << "," << spdF << "; " << timeToCatch << "------";
-                return true;
             }
         }
         
+        return uniqueFinishes.size();
     }
 };
 
 
 int main() {
     Solution mySol;
-    int myTarget {21};
-    std::vector<int> myPosition {1,15,6,8,18,14,16,2,19,17,3,20,5};
-    std::vector<int> mySpeed {8,5,5,7,10,10,7,9,3,4,4,10,2};
+    int myTarget {10};
+    std::vector<int> myPosition {8,3,7,4,6,5};
+    std::vector<int> mySpeed {4,4,4,4,4,4};
 
     int result = mySol.carFleet(myTarget, myPosition, mySpeed);
     std::cout << "Result is: " << result << std::endl; 
@@ -121,5 +93,24 @@ for i in range(n, 1):
         fleets.pop()
 
 size of fleets return
+
+
+
+UTILS:
+
+pos[i] = 8
+spd[i] = 4
+in 2 periods it reaches target 15
+
+(15-8)/4 = 2
+
+
+let A = B*k + r, where k,r=0,1,2,3,... and r<B
+
+ceil(A/B) = ceil((Bk+r)/B) = ceil(k + r/B) = 
+            k + ceil(r/B)
+if r==0: ceil(r/B) = 0;
+else:   ceil(r/B) = 1
+basically, it is  (A%B)==0
 
 */
