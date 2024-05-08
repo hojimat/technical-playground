@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <cmath>
 #include <stack>
 #include <map>
 
@@ -12,15 +11,16 @@ public:
         // we don't need speed, we can compare position+time
         // because we were guaranteed no duplicate positions;
         // this is already O(n*log n) because of sorting
-        std::map<int, int> cars {}; 
+        std::map<int, double> cars {}; 
         for (int i=0; i<n; i++) {//O(n)
-            int toCeiling = (target-position[i]) % speed[i] != 0;
-            int timeToFinish = (target-position[i])/speed[i] + toCeiling;
+            // int toCeiling = (target-position[i]) % speed[i] != 0;
+            double timeToFinish = (double)(target-position[i])/ (double)speed[i];
             //cars.insert({position[i], timeToFinish});
             cars[position[i]] = timeToFinish;
         }
 
-        std::stack<std::pair<int, int>> uniqueFinishes {};
+
+        std::stack<std::pair<int, double>> uniqueFinishes {};
         // Now we have a sorted map of cars {position: timeToFinish}
         // we start from the closest car to the finish
         // add it to stack; next add only if different finish time
@@ -30,15 +30,13 @@ public:
                 continue;
             }
 
-            int topPos = uniqueFinishes.top().first;
-            int topTtf = uniqueFinishes.top().second;
-            int curPos = it->first;
-            int curTtf = it->second;
+            double topTtf = uniqueFinishes.top().second;
+            double curTtf = it->second;
             // by design, we know that topPos > curPos
             // so, only need to check ttf
 
             if (curTtf > topTtf) {// doesn't catch up on time
-                uniqueFinishes.push({it->first, it->second });
+                uniqueFinishes.push({it->first, it->second});
                 continue;
             }
         }
