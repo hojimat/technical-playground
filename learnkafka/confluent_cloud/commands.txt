@@ -1,0 +1,6 @@
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Basic VFozMlhHNDJKV09KTDJRTDpxYjNPdm12TFBZd0FoMkJWYWtiZzBPK2FGNzV1cDFMVG91VlBmQk9BVmFUdkJhQWZZR2tOVjZMejRTV1o3ak1m" \
+  https://pkc-12576z.us-west2.gcp.confluent.cloud:443/kafka/v3/clusters/lkc-8dpdw7/topics \
+  -d '{"topic_name":"files"}'
