@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: claudeDB
+      POSTGRES_USER: claude
+      POSTGRES_PASSWORD: monet
+      PG_DATA: /data/db
+    volumes:
+      - /data:/data/db
+    ports:
+      - '5432:5432'
