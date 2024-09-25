@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, Any
 from fastapi import FastAPI, Path, Query, Body
 from pydantic import BaseModel, Field
 
@@ -25,7 +25,7 @@ def put_book(
         book: Book,
         q: str | None = None):
 
-    results = {"book_id": book_id}
+    results: dict[str, Any] = {"book_id": book_id}
     
     if q:
         print('hi')
@@ -36,3 +36,4 @@ def put_book(
     results.update({"book": book})
 
     return results
+
